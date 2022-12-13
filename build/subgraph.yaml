@@ -1,8 +1,8 @@
 specVersion: 0.0.5
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 features:
-  - nonDeterministicIpfs 
+  - nonDeterministicIpfs
 dataSources:
   - kind: ethereum
     name: Token
@@ -20,10 +20,10 @@ dataSources:
         - User
       abis:
         - name: Token
-          file: ./abis/Token.json
+          file: Token\abis\Token.json
       eventHandlers:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/token.ts
+      file: Token\Token.wasm
